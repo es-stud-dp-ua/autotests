@@ -1,0 +1,4 @@
+autotests
+=========
+
+Student portal autotests
