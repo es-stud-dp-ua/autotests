@@ -15,7 +15,6 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class MainPage {
     WebDriver driver;
-    public enum language {ru, en_GB};
     
     @FindBy(className="graystyle")
     private static WebElement signIn;
@@ -34,12 +33,8 @@ public class MainPage {
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
-        driver.get("http://109.206.40.61:8080");
+        driver.get("http://out.dp.ua:8080/ru/");
         PageFactory.initElements(driver, this);
-    }
-
-    public void SetLanguage(language l) {
-        driver.get("http://109.206.40.61:8080/"+l.toString()+"/");
     }
     
     public void signIn(String mail, String password)

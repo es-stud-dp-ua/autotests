@@ -7,7 +7,6 @@ package US11_FF_M;
 import java.util.Arrays;
 import java.util.Collection;
 import org.junit.runners.Parameterized.Parameters;
-import US11_FF_M.MainPage.language;
 import US11_FF_M.RegistrationPage.error_kind;
 import additional.BrowserActions;
 import java.util.concurrent.TimeUnit;

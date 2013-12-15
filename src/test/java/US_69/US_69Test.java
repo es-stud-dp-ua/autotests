@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import US11_FF_M.MainPage;
-import US11_FF_M.MainPage.language;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.remote.UnreachableBrowserException;
@@ -36,7 +35,6 @@ public class US_69Test {
         MainPage m  = new MainPage(driver);
         if (!MainPage.IsAutorised())
             m.signIn("test@liferay.com", "test");
-        m.SetLanguage(language.ru);
         Assert.assertTrue("Error: autorisation failed!",MainPage.IsAutorised());
     }
     

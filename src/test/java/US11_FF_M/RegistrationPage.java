@@ -18,7 +18,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 class RegistrationPage {
     public WebDriver driver;
-    public String baseURL = "http://109.206.40.61:8080/ru/registration";
+    public String baseURL = "http://out.dp.ua:8080/ru/registration";
 
     boolean PortletIsAvaible() {
         try
@@ -36,7 +36,7 @@ class RegistrationPage {
     @FindBy(className="portlet-msg-error")
     private WebElement portletError;
     
-    @FindBy(css = "#registration-form>fieldset>div>input")
+    @FindBy(xpath = "//input[@type='submit']")
     private WebElement submitButton;
     
     @FindBy(id = "lastName")
@@ -73,9 +73,9 @@ class RegistrationPage {
     
     void InputRequiredData(String name, String surname, String mail, String password, String confirm_password) {
         lastName.clear();
-        lastName.sendKeys(name);
+        lastName.sendKeys(surname);
         firstName.clear();
-        firstName.sendKeys(surname);
+        firstName.sendKeys(name);
         email.clear();
         email.sendKeys(mail);
         pass1.clear();
@@ -87,7 +87,8 @@ class RegistrationPage {
     boolean CheckErrorMessage(error_kind kind, String message)
     {
         try{
-        return driver.findElement(By.cssSelector("span[id^=\""+kind.toString()+"\"]")).getText().contains(message);}
+            String errXpath = "//*[@class='error' and @for='"+kind+"']";
+            return driver.findElement(By.xpath(errXpath)).getText().contains(message);}
         catch(NoSuchElementException e)
         {
             return false;
@@ -97,7 +98,8 @@ class RegistrationPage {
     boolean CheckErrorPresence(error_kind kind)
     {
         try{
-            driver.findElement(By.cssSelector("span[id^=\""+kind.toString()+"\"]"));
+            String errXpath = "//*[@class='error' and @for='"+kind+"']";
+            driver.findElement(By.xpath(errXpath));
             return true;
         }
         catch(NoSuchElementException e)
