@@ -1,5 +1,5 @@
 package Pages;
- class Page implements IPage {
+public class Page implements IPage {
 
 	 
 	// WebDriver driver;
