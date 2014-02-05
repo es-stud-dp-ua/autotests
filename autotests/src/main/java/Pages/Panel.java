@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,6 +21,7 @@ public class Panel {
     List<String> getLinks(){return null;
 }
     public int iconCount(){return 0;}
-        }
+        
+}
     
     

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,10 +16,10 @@ import org.openqa.selenium.support.FindBy;
 public class Calendar {
     
      @FindBy(css=".month")
-    public WebElement month;
-     public String getCalendarTitle(){
+    	public WebElement month;
+     	public String getCalendarTitle(){
         String title;
-         title = month.findElement(By.cssSelector(".month")) .getText();
+        title = month.findElement(By.cssSelector(".month")) .getText();
         return title;
      }
        @FindBy(css=".left")
